@@ -6,10 +6,10 @@ public with sharing class ThirteenPageController {
   }
 
   public List<Limit__c> getLimits() {
-    return [SELECT Id, Limit__c, Value__c FROM Limit__c LIMIT 9];
+    return [SELECT Id, Description__c, Value__c FROM Limit__c LIMIT 9];
   }
 
   public List<Limit__c> getLimitsSecondPart() {
-    return [SELECT Id, Limit__c, Value__c FROM Limit__c OFFSET 9];
+    return [SELECT Id, Description__c, Value__c FROM Limit__c OFFSET 9];
   }
 }

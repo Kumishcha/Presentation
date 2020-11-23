@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Salutation</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Salutation</shortDescription>
+        <value>Welcom to Visualforce!!!</value>
+    </labels>
+    <labels>
+        <fullName>actionFunction</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>actionFunction</shortDescription>
+        <value>&lt;apex:actionFunction&gt;</value>
+    </labels>
+    <labels>
+        <fullName>apexForm</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>apexForm</shortDescription>
+        <value>&lt;apex:form&gt;&lt;/apex:form&gt;</value>
+    </labels>
+    <labels>
+        <fullName>conditionalExpression</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>conditionalExpression</shortDescription>
+        <value>{! IF(condition, ‘true&apos;, ‘false&apos;) }</value>
+    </labels>
+    <labels>
+        <fullName>expressionSyntax</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>expressionSyntax</shortDescription>
+        <value>{! expression }</value>
+    </labels>
+    <labels>
+        <fullName>formulaExpression</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>formulaExpression</shortDescription>
+        <value>{! $User.FirstName &amp; &apos; &apos; &amp; $User.LastName }</value>
+    </labels>
+    <labels>
+        <fullName>globalVariable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>globalVariable</shortDescription>
+        <value>{! $Action }, {! $Component }, {! $Label }</value>
+    </labels>
+    <labels>
+        <fullName>head</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>head</shortDescription>
+        <value>&lt;head&gt;</value>
+    </labels>
+    <labels>
+        <fullName>includeLightning</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>includeLightning</shortDescription>
+        <value>&lt;apex:includeLightning /&gt;</value>
+    </labels>
+    <labels>
+        <fullName>inputField</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>inputField</shortDescription>
+        <value>&lt;apex:inputField&gt;</value>
+    </labels>
+    <labels>
+        <fullName>outputText</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>outputText</shortDescription>
+        <value>&lt;apex:outputText&gt;</value>
+    </labels>
+    <labels>
+        <fullName>script</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>script</shortDescription>
+        <value>&lt;script&gt;</value>
+    </labels>
+</CustomLabels>

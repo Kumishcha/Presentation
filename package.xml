@@ -75,7 +75,8 @@
         <members>outputText</members>
         <members>inputField</members>
         <members>actionFunction</members>
-        <name>CustomLabels</name>
+        <!-- <members>*</members> -->
+        <name>CustomLabel</name>
     </types>
     <types>
         <members>Start_2</members>

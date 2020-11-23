@@ -10,11 +10,11 @@
     <apex:pageBlock >
         <apex:pageBlockSection columns="2">
             <apex:pageBlockTable value="{!limits}" var="l">
-                <apex:column value="{!l.Limit__c}" />
+                <apex:column value="{!l.Description__c}" />
                 <apex:column value="{!l.Value__c}" />
             </apex:pageBlockTable>
             <apex:pageBlockTable value="{!limitsSecondPart}" var="l">
-                <apex:column value="{!l.Limit__c}" />
+                <apex:column value="{!l.Description__c}" />
                 <apex:column value="{!l.Value__c}" />
             </apex:pageBlockTable>
         </apex:pageBlockSection>
