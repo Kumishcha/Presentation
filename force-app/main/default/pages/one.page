@@ -1,0 +1,25 @@
+<apex:page lightningStyleSheets="true">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <apex:slds />
+    </head>
+    <c:header isHideBackButton="true" isHideNextButton="true" myValue="{!$CurrentPage.Name}" contactId="" />
+    <apex:pageBlock >
+        <apex:pageBlockSection columns="2">
+            <apex:image url="{!$Resource.TestImage}" width="800" height="300" />
+            <ul class="slds-list_dotted slds-text-heading_large">
+                <li class="slds-item">Visualforce is a framework that allows developers to build custom user interfaces.
+                </li>
+                <li class="slds-item">Visualforce is a framework that includes a tag-based markup language, similar to HTML.
+                </li>
+                <li class="slds-item">Visualforce is a framework that includes a set of server-side “standard controllers” that make basic database
+                    operations.
+                </li>
+                <li class="slds-item">Visualforce is a framework for rendering HTML pages using an MVC paradigm.
+                </li>
+            </ul>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

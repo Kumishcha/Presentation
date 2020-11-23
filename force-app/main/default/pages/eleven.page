@@ -1,0 +1,92 @@
+<apex:page lightningStyleSheets="true" controller="ElevenPageController">
+    <style type="text/css">
+        .custPopup {
+            background-color: white;
+            border-width: 2px;
+            border-style: solid;
+            z-index: 9999;
+            left: 50%;
+            padding: 10px;
+            position: absolute;
+            /* These are the 3 css properties you will need to change so the popup
+            displays in the center of the screen. First set the width. Then set
+            margin-left to negative half of what the width is. You can add
+            the height property for a fixed size pop up if you want.*/
+            width: 500px;
+            margin-left: -250px;
+            top: 100px;
+        }
+
+        .popupBackground {
+            background-color: black;
+            opacity: 0.20;
+            filter: alpha(opacity=20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+
+        .colortext {
+            color: red;
+        }
+    </style>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <apex:slds />
+    </head>
+    <c:header isHideBackButton="true" isHideNextButton="true" myValue="{!$CurrentPage.Name}" contactId="{!contactId}" />
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-2">
+            <apex:image url="{!$Resource.viewState}" width="800" height="300" />
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <ui class="slds-list_dotted slds-text-heading_large">
+                <li class="slds-item">view state = VF page stage + controller stage;
+                </li>
+                <li class="slds-item">view state is encrypted string;
+                </li>
+                <li class="slds-item">large view states require longer processing times for each request string, including serializing and deserializing;
+                </li>
+                <li class="slds-item">for using View State need:
+                    <ul class="slds-is-nested slds-list_ordered slds-text-heading_large">
+                        <li class="slds-item">VF page with custom controller or controller extensions</li>
+                        <li class="slds-item">VF page have to contains tag
+                            <br/> {! $Label.apexForm}</li>
+                    </ul>
+                </li>
+            </ui>
+            <div class="slds-text-heading_medium">
+                <apex:form >
+                    <apex:commandlink action="{!commandlink}" value="Prepare to View State Tab" />
+                    <br/>
+                    <apex:commandlink value="Show an example of use" action="{!showPopup}" rerender="tstpopup" />
+                </apex:form>
+            </div>
+            <apex:form >
+                <apex:outputPanel id="tstpopup">
+                    <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displayPopUp}" />
+                    <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
+                        <div class="slds-text-longform">
+                            <ol class="slds-list_ordered slds-text-heading_medium">
+                                <li>make a duplicate of this tab in your browser(Right-click the browser tab and select Duplicate
+                                    or Duplicate Tab, depending on the browser);</li>
+                                <li>in a new tab switch to Salesforce Classic;</li>
+                                <li>change URL after my Domain to /apex/eleven;</li>
+                                <li>study the View State tab at the bottom of the page;</li>
+                                <li>in a duplicate tab
+                                    <span class="colortext">switch to Lightning Experience</span> and close tab.</li>
+                            </ol>
+                        </div>
+                        <apex:commandButton value="Close" action="{!closePopup}" rerender="tstpopup" />
+                    </apex:outputPanel>
+                </apex:outputPanel>
+
+            </apex:form>
+        </div>
+    </div>
+</apex:page>

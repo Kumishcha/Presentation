@@ -1,0 +1,22 @@
+<apex:page lightningStyleSheets="true" controller="ThirteenPageController">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <apex:slds />
+    </head>
+    <apex:includeLightning />
+    <c:header isHideBackButton="true" isHideNextButton="true" myValue="{!$CurrentPage.Name}" contactId="{!contactId}" />
+    <apex:pageBlock >
+        <apex:pageBlockSection columns="2">
+            <apex:pageBlockTable value="{!limits}" var="l">
+                <apex:column value="{!l.Limit__c}" />
+                <apex:column value="{!l.Value__c}" />
+            </apex:pageBlockTable>
+            <apex:pageBlockTable value="{!limitsSecondPart}" var="l">
+                <apex:column value="{!l.Limit__c}" />
+                <apex:column value="{!l.Value__c}" />
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

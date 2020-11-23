@@ -1,0 +1,35 @@
+<apex:page lightningStyleSheets="true" controller="ControllerForSendingContactId">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <apex:slds />
+    </head>
+    <apex:includeLightning />
+    <c:header isHideBackButton="true" isHideNextButton="true" myValue="{!$CurrentPage.Name}" contactId="{!contactId}" />
+    <apex:pageBlock >
+        <apex:pageBlockSection columns="2">
+            <apex:image url="{!$Resource.js}" width="800" height="300" />
+            <ui class="slds-list_dotted slds-text-heading_large">
+                <li class="slds-item">The best way to include JavaScript libraries is by creating a static resource , and then including the library
+                    by adding an component to your page:
+                </li>
+                <li class="slds-item">Each component in a Visualforce page has its own Id attribute. When the page is rendered, this attribute
+                    is used to generate the Document Object Model (DOM) ID. Use $Component.Path.to.Id in JavaScript to reference
+                    a specific component on a page, where Path.to.Id is a component hierarchy specifier for the component
+                    being referenced.
+                </li>
+                <li class="slds-item">Writing {! $Label.script} tags at the top of the page, probably in the {! $Label.head} tag, will give you
+                    long load times for your VF page;
+                </li>
+                <li class="slds-item">Writing {! $Label.script} tags at the bottom of page gives you advantage to load your HTML components first
+                    and then load JS;
+                </li>
+                <li class="slds-item">use Visualforce composition so that you can optimize and abstract code. This also helps you avoid code duplication.
+                    You can put all your code for header/sidebar/footer in template and all you focus on is content while
+                    building pages.
+                </li>
+            </ui>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

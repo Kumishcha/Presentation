@@ -1,0 +1,32 @@
+<apex:page lightningStyleSheets="true" controller="ControllerForSendingContactId">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <apex:slds />
+    </head>
+    <apex:includeLightning />
+    <c:header isHideBackButton="true" isHideNextButton="true" myValue="{!$CurrentPage.Name}" contactId="{!contactId}" />
+    <apex:pageBlock >
+        <apex:pageBlockSection columns="2">
+            <apex:image url="{!$Resource.reduceViewState}" width="800" height="300" />
+            <ui class="slds-list_dotted slds-text-heading_large">
+                <li class="slds-item">use the View State tab in the development mode footer to monitor view state performance;
+                </li>
+                <li class="slds-item">refining your SOQL calls to return only data that's relevant to the Visualforce page;
+                </li>
+                <li class="slds-item">reducing the number of components your page depends on;
+                </li>
+                <li class="slds-item">use filters and pagination;
+                </li>
+                <li class="slds-item">declare instance variables with a transient keyword when the variable is only useful for the current request;
+                </li>
+                <li class="slds-item">if some data can be read-only and use the {! $Label.outputText} component instead of {! $Label.inputField};
+                </li>
+                <li class="slds-item">use JavaScript remoting, unlike the {! $Label.actionFunction} component, JavaScript Remoting does not require
+                    a form component.
+                </li>
+            </ui>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,25 @@
+<apex:component controller="ComponentController">
+    <apex:attribute name="isHideBackButton" description="This is the value for the component." type="Boolean" required="true"
+    />
+    <apex:attribute name="isHideNextButton" description="This is the value for the component." type="Boolean" required="true"
+    />
+    <apex:attribute name="myValue" assignTo="{!pageName}" description="This is the value for the component." type="String" required="true"
+    />
+    <apex:attribute name="contactId" assignTo="{!conId}" description="This is the value for the component." type="String" required="true"
+    />
+    <apex:toolbar id="theToolbar">
+        <apex:toolbarGroup itemSeparator="line" location="left" id="toobarGroupLinks">
+            <apex:form>
+                <apex:commandButton action="{!goToBackPage}" value="Back" rendered="{!IF(isHideBackButton,true,false)}" />
+            </apex:form>
+        </apex:toolbarGroup>
+        <apex:toolbarGroup itemSeparator="line" style="text-align:center;color: rgb(51, 153, 255);font-size: 25px;" id="toobarGroupLinks3">
+            <apex:outputText value="{!Message}" />
+        </apex:toolbarGroup>
+        <apex:toolbarGroup itemSeparator="line" location="right" id="toobarGroupLinks2">
+            <apex:form>
+                <apex:commandButton action="{!goToNextPage}" value="Next" rendered="{!IF(isHideNextButton,true,false)}" />
+            </apex:form>
+        </apex:toolbarGroup>
+    </apex:toolbar>
+</apex:component>

@@ -1,0 +1,70 @@
+<apex:page lightningStyleSheets="true" controller="ControllerForSendingContactId">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <apex:slds />
+    </head>
+    <style>
+        #col1,
+        #col2 {
+            width: 49%;
+            display: inline-block;
+        }
+    </style>
+    <apex:includeLightning />
+    <c:header isHideBackButton="true" isHideNextButton="true" myValue="{!$CurrentPage.Name}" contactId="{!contactId}" />
+    <div id="col1">
+        <script>
+            $Lightning.use("c:myLightningApp", function () {
+                $Lightning.createComponent(
+                    "c:helloMessageInteractive",
+                    {},
+                    "c1",
+                    function (cmp) {
+                        console.log("Component is created!");
+                        console.log(cmp);
+                    });
+            });
+        </script>
+        <apex:pageBlock title="Aura">
+            <apex:pageBlockSection columns="1">
+                <ol class="slds-list_ordered slds-text-heading_large">
+                    <li class="slds-item">Add the {! $Label.includeLightning}  component to your Visualforce page.
+                    </li>
+                    <li class="slds-item">Reference a Lightning app that declares your component dependencies with $Lightning.use().
+                    </li>
+                    <li class="slds-item">Write a function that creates the component on the Visualforce page with $Lightning.createComponent().
+                    </li>
+                </ol>
+            </apex:pageBlockSection>
+            <div id="c1" />
+        </apex:pageBlock>
+    </div>
+    <div id="col2">
+        <script>
+            $Lightning.use("c:myLightningApp", function () {
+                $Lightning.createComponent("c:componentForVFLWC",
+                    {
+                    },
+                    "c2",
+                    function (cmp) {
+                        console.log('LWC Componenet added in VF page');
+                    });
+            });
+        </script>
+        <apex:pageBlock title="LWC">
+            <apex:pageBlockSection columns="1">
+                <ol class="slds-list_ordered slds-text-heading_large">
+                    <li class="slds-item">Add the LWC for Visualforce JavaScript library using the {! $Label.includeLightning} component.
+                    </li>
+                    <li class="slds-item">Create and reference a standalone Aura app that declares your component dependencies.
+                    </li>
+                    <li class="slds-item">Write a JavaScript function that creates the component on the page using $Lightning.createComponent().
+                    </li>
+                </ol>
+            </apex:pageBlockSection>
+            <div id="c2" />
+        </apex:pageBlock>
+    </div>
+</apex:page>

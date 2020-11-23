@@ -1,0 +1,114 @@
+<apex:page lightningStyleSheets="true" action="{!checkActionAttribute}" controller="SevenPageController">
+    <style>
+        #col1,
+        #col2 {
+            width: 49%;
+            display: inline-block;
+        }
+    </style>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <apex:slds />
+        <script type="text/javascript">
+            function getRemoteContact() {
+                var contactName = document.getElementById('acctSearch').value;
+
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.SevenPageController.getContact}',
+                    contactName,
+                    function (result, event) {
+                        if (event.status) {
+                            // Get DOM IDs for HTML and Visualforce elements like this
+                            document.getElementById('remoteContId').innerHTML = result.Id
+                            document.getElementById(
+                                "{!$Component.block.blockSection.secondItem.name}"
+                            ).innerHTML = result.Name;
+                        } else {
+                            document.getElementById("responseErrors").innerHTML = "Please enter the Сontact name from the previous step";
+                        }
+                    },
+                    { escape: true }
+                );
+            }
+        </script>
+    </head>
+    <c:header isHideBackButton="true" isHideNextButton="{!IF(checkA && checkB && checkC && checkD && checkE,true,false)}" myValue="{!$CurrentPage.Name}"
+        contactId="{!contactId}" />
+    <div id="col1">
+        <apex:pageBlock >
+            <apex:image url="{!$Resource.Winter21}" width="800" height="300" rendered="{!isHideImage}" />
+        </apex:pageBlock>
+    </div>
+    <div id="col2">
+        <apex:form >
+            <apex:pageMessages />
+            <apex:pageBlock rendered="{!isHideCounter}">
+                <apex:outputText value="Wait 5 sec and watch this counter: {!count}" id="counter" />
+                <apex:actionPoller action="{!incrementCounter}" reRender="counter" interval="5" />
+            </apex:pageBlock>
+            <apex:pageBlock rendered="{!isHideFunction}">
+                <apex:actionFunction name="sayHello" action="{!sayHello}" rerender="out" status="myStatus" />
+                <apex:outputPanel id="out">
+                    <apex:outputText value="Hello " />
+                    <apex:actionStatus startText="requesting..." id="myStatus">
+                        <apex:facet name="stop">{!username}</apex:facet>
+                    </apex:actionStatus>
+                </apex:outputPanel>
+            </apex:pageBlock>
+            <apex:pageBlock rendered="{!isHideSupport}">
+                <apex:inputText value="{!supportValue}">
+                    <apex:actionSupport event="onkeydown" action="{!supportMethod}" />
+                </apex:inputText>
+            </apex:pageBlock>
+        </apex:form>
+        <apex:pageBlock id="block" rendered="{!isHideJSRemoting}">
+            <input id="acctSearch" type="text" placeholder="type the contact name" />
+            <button onclick="getRemoteContact()">Get Contact</button>
+            <apex:form >
+                <apex:commandlink action="{!remind}" value="forgot?" />
+            </apex:form>
+            <div rendered="{!isHideContactId}">
+                {!conName}
+            </div>
+            <div id="responseErrors"></div>
+            <apex:pageBlockSection id="blockSection" columns="2">
+                <apex:pageBlockSectionItem id="firstItem">
+                    <span id="remoteContId" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="secondItem">
+                    <apex:outputText id="name" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock >
+            <apex:form >
+                <ul class="slds-list_dotted slds-text-heading_medium">
+                    <li class="slds-item">apex:page action;
+                    </li>
+                    <li class="slds-item">
+                        <apex:commandlink action="{!commandlink}" value="apex:commandLink" />
+                    </li>
+                    <li class="slds-item">
+                        <apex:commandButton action="{!actionFunction}" value="apex:actionFunction" />
+                    </li>
+                    <li class="slds-item">
+                        <apex:commandButton action="{!actionSupport}" value="apex:actionSupport" />
+                    </li>
+                    <li class="slds-item">
+                        <apex:commandButton action="{!actionPoller}" value="apex:actionPoller" />
+                    </li>
+                    <li class="slds-item">
+                        <apex:commandButton action="{!JSRemoting}" value="Javascript Remoting" />
+                    </li>
+                    <li class="slds-item">rendering pageblocktable, datatable, apex:repeat which are populating data calling controller methods;
+                    </li>
+                    <li class="slds-item">Visualforce Remote Objects.
+                    </li>
+                </ul>
+            </apex:form>
+        </apex:pageBlock>
+    </div>
+    <script>window.setTimeout(sayHello, 2000)</script>
+</apex:page>

@@ -1,0 +1,25 @@
+<apex:page lightningStyleSheets="true" controller="ControllerForSendingContactId">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <apex:slds />
+    </head>
+    <apex:includeLightning />
+    <c:header isHideBackButton="true" isHideNextButton="true" myValue="{!$CurrentPage.Name}" contactId="{!contactId}" />
+    <apex:pageBlock >
+        <apex:pageBlockSection columns="2">
+            <apex:image url="{!$Resource.css}" width="800" height="300" />
+            <ui class="slds-list_dotted slds-text-heading_large">
+                <li class="slds-item">Internal (Embedded) Styles: defined in the {! $Label.head} section of the current page;
+                </li>
+                <li class="slds-item">Inline Styles: defined within the HTML markup of the particular page element;
+                </li>
+                <li class="slds-item">External Styles: defined in the external Style Sheet which is linked to the web pages;
+                </li>
+                <li class="slds-item">Using the Lightning Design System.
+                </li>
+            </ui>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

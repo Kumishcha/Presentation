@@ -1,0 +1,17 @@
+<apex:page lightningStyleSheets="true">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <apex:slds />
+    </head>
+    <c:header isHideBackButton="false" isHideNextButton="true" myValue="{!$CurrentPage.Name}" contactId="" />
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:image url="{!$Resource.TitleImage}" width="800" height="300" />
+        </apex:pageBlockSection>
+        <apex:pageBlockSection >
+            <div class="slds-text-heading_large slds-text-align_left slds-text-color_default">Basics</div>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

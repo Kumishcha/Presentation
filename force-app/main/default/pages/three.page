@@ -1,0 +1,29 @@
+<apex:page lightningStyleSheets="true">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <apex:slds />
+    </head>
+    <c:header isHideBackButton="true" isHideNextButton="true" myValue="{!$CurrentPage.Name}" contactId="" />
+    <apex:pageBlock >
+        <apex:pageBlockSection columns="2">
+            <apex:image url="{!$Resource.createPage}" width="800" height="300" />
+            <ul class="slds-list_dotted slds-text-heading_large">
+                <li class="slds-item">allow to compose components to form a Page Structure;
+                </li>
+                <li class="slds-item">include nearly 150 built-in components;
+                </li>
+                <li class="slds-item">use the case-insensitive expression syntax
+                    <br/>{! $Label.expressionSyntax };
+                </li>
+                <li class="slds-item">use global variable: {! $Label.globalVariable} etc.;
+                </li>
+                <li class="slds-item">use formula expression: {! $Label.formulaExpression};
+                </li>
+                <li class="slds-item">use conditional expression: {! $Label.conditionalExpression}.
+                </li>
+            </ul>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>
