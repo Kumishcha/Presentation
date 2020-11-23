@@ -62,5 +62,24 @@
         <members>Confetti</members>
         <name>StaticResource</name>
     </types>
+    <types>
+        <members>expressionSyntax</members>
+        <members>globalVariable</members>
+        <members>formulaExpression</members>
+        <members>conditionalExpression</members>
+        <members>Salutation</members>
+        <members>includeLightning</members>
+        <members>head</members>
+        <members>script</members>
+        <members>apexForm</members>
+        <members>outputText</members>
+        <members>inputField</members>
+        <members>actionFunction</members>
+        <name>CustomLabels</name>
+    </types>
+    <types>
+        <members>Start_2</members>
+        <name>CustomTab</name>
+    </types>
     <version>46.0</version>
 </Package>
