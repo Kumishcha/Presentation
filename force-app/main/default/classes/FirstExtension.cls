@@ -14,8 +14,13 @@ public with sharing class FirstExtension {
     controller.save();
     contactId = controller.getId();
 
-    PageReference pageRef = new pagereference(
-      'https://margo-dev-ed.lightning.force.com/apex/six?core.apexpages.request.devconsole=1&id=' +
+    // PageReference pageRef = new pagereference(
+    //   'https://margo-dev-ed.lightning.force.com/apex/g_six?core.apexpages.request.devconsole=1&id=' +
+    //   contactId
+    // );
+    PageReference pageRef = new PageReference(
+      System.Url.getSalesforceBaseUrl().toExternalForm() +
+      '/apex/g_six?core.apexpages.request.devconsole=1&id=' +
       contactId
     );
 
@@ -25,7 +30,7 @@ public with sharing class FirstExtension {
 
   public PageReference createContact() {
     isHideForm = true;
-    return Page.six;
+    return Page.g_six;
   }
 
   public String getFirstExtensionMessage() {

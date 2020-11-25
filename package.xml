@@ -22,21 +22,21 @@
         <name>ApexClass</name>
     </types>
     <types>
-        <members>titlePage</members>
-        <members>one</members>
-        <members>two</members>
-        <members>three</members>
-        <members>four</members>
-        <members>five</members>
-        <members>six</members>
-        <members>seven</members>
-        <members>eight</members>
-        <members>nine</members>
-        <members>ten</members>
-        <members>eleven</members>
-        <members>twelve</members>
-        <members>thirteen</members>
-        <members>fourteen</members>
+        <members>a_title</members>
+        <members>b_one</members>
+        <members>c_two</members>
+        <members>d_three</members>
+        <members>e_four</members>
+        <members>f_five</members>
+        <members>g_six</members>
+        <members>h_seven</members>
+        <members>i_eight</members>
+        <members>j_nine</members>
+        <members>k_ten</members>
+        <members>l_eleven</members>
+        <members>m_twelve</members>
+        <members>n_thirteen</members>
+        <members>o_fourteen</members>
         <name>ApexPage</name>
     </types>
     <types>
@@ -79,7 +79,7 @@
         <name>CustomLabel</name>
     </types>
     <types>
-        <members>Start_2</members>
+        <members>Start</members>
         <name>CustomTab</name>
     </types>
     <version>46.0</version>
