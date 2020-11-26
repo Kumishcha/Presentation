@@ -7,7 +7,7 @@ import {
 import {
     ShowToastEvent
 } from "lightning/platformShowToastEvent";
-import CONFETTI from "@salesforce/resourceUrl/Confetti";
+import CONFETTI from "@salesforce/resourceUrl/ConfettiResource";
 
 export default class ComponentForVFLWC extends LightningElement {
     myconfetti;

@@ -7,7 +7,7 @@
     </head>
     <apex:includeLightning />
     <c:header isHideBackButton="true" isHideNextButton="false" myValue="{!$CurrentPage.Name}" contactId="{!contactId}" />
-    <apex:pageBlock >
+    <apex:pageBlock>
         <ui class="slds-list_dotted slds-text-heading_medium">
             <li class="slds-item">
                 <apex:outputlink value="https://trailhead.salesforce.com/content/learn/modules/visualforce_fundamentals">https://trailhead.salesforce.com/content/learn/modules/visualforce_fundamentals</apex:outputlink>
@@ -41,6 +41,9 @@
             </li>
             <li class="slds-item">
                 <apex:outputlink value="https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_tools_edit_toolbar.htm">https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_tools_edit_toolbar.htm</apex:outputlink>
+            </li>
+            <li class="slds-item">
+                <apex:outputlink value=" https://help.salesforce.com/articleView?id=import_with_data_import_wizard.htm&amp;type=5"> https://help.salesforce.com/articleView?id=import_with_data_import_wizard.htm&amp;type=5</apex:outputlink>
             </li>
         </ui>
     </apex:pageBlock>

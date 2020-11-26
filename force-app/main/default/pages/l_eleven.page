@@ -76,7 +76,7 @@
                                 <li>make a duplicate of this tab in your browser(Right-click the browser tab and select Duplicate
                                     or Duplicate Tab, depending on the browser);</li>
                                 <li>in a new tab switch to Salesforce Classic;</li>
-                                <li>change URL after my Domain to /apex/eleven;</li>
+                                <li>change URL after my Domain to /apex/l_eleven</li>
                                 <li>study the View State tab at the bottom of the page;</li>
                                 <li>in a duplicate tab
                                     <span class="colortext">switch to Lightning Experience</span> and close tab.</li>

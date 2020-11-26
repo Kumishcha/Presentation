@@ -11,9 +11,9 @@
         <div class="slds-col slds-size_1-of-2">
             <apex:pageMessages />
 
-            <apex:pageBlock >
+            <apex:pageBlock>
                 <apex:image url="{!$Resource.newContact}" width="800" height="300" />
-                <apex:pageBlockSection >
+                <apex:pageBlockSection>
                     <apex:form rendered="{!IF(NOT(Contact.FirstName != null),true,false)}">
                         <apex:commandButton action="{!createContact}" value="Let's create new Contact" rendered="{!NOT(isHideForm)}" />
                     </apex:form>
@@ -21,8 +21,8 @@
             </apex:pageBlock>
         </div>
         <div class="slds-col slds-size_1-of-2">
-            <apex:form >
-                <apex:pageBlock >
+            <apex:form>
+                <apex:pageBlock>
                     <apex:pageBlockSection rendered="{!IF(Contact.FirstName != null,true,false)}">
                         <apex:outputText value="{!Contact.FirstName & ' ' & Contact.LastName & ', '} {! $Label.Salutation }" />
                         <br/>

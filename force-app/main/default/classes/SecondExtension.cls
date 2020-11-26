@@ -1,5 +1,5 @@
 public with sharing class SecondExtension {
-  private String message { get; set; }
+  public String message { get; set; }
   ApexPages.StandardController controller;
 
   public SecondExtension(ApexPages.StandardController con) {

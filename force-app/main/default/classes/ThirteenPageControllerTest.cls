@@ -1,5 +1,5 @@
 @isTest
-private with sharing class ThirteenPageControllerTest {
+private class ThirteenPageControllerTest {
   @TestSetup
   static void setData() {
     List<Limit__c> listToInsert = new List<Limit__c>();
@@ -34,6 +34,30 @@ private with sharing class ThirteenPageControllerTest {
     for (Limit__c l : controller.getLimitsSecondPart()) {
       expected++;
     }
+
+    System.assertEquals(expected, actual);
+  }
+
+  @isTest
+  static void testClosePopup() {
+    Boolean actual = false;
+    Boolean expected;
+
+    ThirteenPageController contr = new ThirteenPageController();
+    contr.closePopup();
+    expected = contr.displayPopup;
+
+    System.assertEquals(expected, actual);
+  }
+
+  @isTest
+  static void testShowPopup() {
+    Boolean actual = true;
+    Boolean expected;
+
+    ThirteenPageController contr = new ThirteenPageController();
+    contr.showPopup();
+    expected = contr.displayPopup;
 
     System.assertEquals(expected, actual);
   }

@@ -6,13 +6,11 @@ public with sharing class SevenPageController {
   public Boolean isHideJSRemoting { get; set; }
   public Boolean isHideContactId { get; set; }
   public String supportValue { get; set; }
-  public String accountName { get; set; }
   public String contactId { get; set; }
   public String conName { get; set; }
-  public String inputValue { get; set; }
   public static List<Contact> contacts { get; set; }
   public static Contact contact { get; set; }
-  private String message { get; set; }
+  public String message { get; set; }
   public Boolean checkA { get; set; }
   public Boolean checkB { get; set; }
   public Boolean checkC { get; set; }
@@ -23,7 +21,6 @@ public with sharing class SevenPageController {
 
   public SevenPageController() {
     isHideImage = false;
-    inputValue = 'type the contact name from the previous step';
     contactId = ApexPages.currentPage().getParameters().get('contactId');
   }
 

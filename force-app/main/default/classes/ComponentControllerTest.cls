@@ -1,5 +1,5 @@
 @isTest
-private with sharing class ComponentControllerTest {
+private class ComponentControllerTest {
   @isTest
   static void testGetMessage() {
     List<Apexpage> lst = [SELECT id, name FROM Apexpage ORDER BY Name ASC];
@@ -15,10 +15,11 @@ private with sharing class ComponentControllerTest {
             '/apex/' +
             a.name
           );
+          System.debug(pageRef);
 
           actual = mapOfMessages.get(p);
 
-          Test.setCurrentPage(pageRef);
+          System.Test.setCurrentPageReference(pageRef);
           ComponentController controller = new ComponentController();
           controller.pageName = a.name;
 
@@ -43,10 +44,12 @@ private with sharing class ComponentControllerTest {
             '/apex/' +
             a.name
           );
+
           actualName = values[i + 1].name().toLowercase();
 
           pageRefActual = new PageReference('/apex/' + actualName);
-          Test.setCurrentPage(pageRef);
+
+          System.Test.setCurrentPageReference(pageRef);
           ComponentController controller = new ComponentController();
           controller.pageName = a.name;
 
@@ -74,10 +77,12 @@ private with sharing class ComponentControllerTest {
             '/apex/' +
             a.name
           );
+
           actualName = values[i - 1].name().toLowercase();
 
           pageRefActual = new PageReference('/apex/' + actualName);
-          Test.setCurrentPage(pageRef);
+
+          System.Test.setCurrentPageReference(pageRef);
           ComponentController controller = new ComponentController();
           controller.pageName = a.name;
           System.debug(controller.goToBackPage().getUrl());

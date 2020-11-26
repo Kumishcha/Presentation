@@ -1,5 +1,5 @@
 @isTest
-private with sharing class ControllerForSendingContactIdTest {
+private class ControllerForSendingContactIdTest {
   @TestSetup
   static void setData() {
     Contact contact = new Contact(FirstName = 'M', LastName = 'K');
@@ -20,7 +20,7 @@ private with sharing class ControllerForSendingContactIdTest {
     controller.conId = actual;
     controller.pageName = values[9].name().toLowerCase();
 
-    Test.setCurrentPage(controller.goToNextPage());
+    System.Test.setCurrentPage(controller.goToNextPage());
 
     ControllerForSendingContactId contr = new ControllerForSendingContactId();
     expected = contr.contactId;
