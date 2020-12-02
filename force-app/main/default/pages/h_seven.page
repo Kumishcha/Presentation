@@ -1,13 +1,13 @@
 <apex:page lightningStyleSheets="true" action="{!checkActionAttribute}" controller="SevenPageController">
-    <style>
-        #col1,
-        #col2 {
-            width: 49%;
-            display: inline-block;
-        }
-    </style>
 
     <head>
+        <style>
+            #col1,
+            #col2 {
+                width: 49%;
+                display: inline-block;
+            }
+        </style>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <apex:slds />
@@ -37,12 +37,12 @@
     <c:header isHideBackButton="true" isHideNextButton="{!IF(checkA && checkB && checkC && checkD && checkE,true,false)}" myValue="{!$CurrentPage.Name}"
         contactId="{!contactId}" />
     <div id="col1">
-        <apex:pageBlock >
+        <apex:pageBlock>
             <apex:image url="{!$Resource.Winter21}" width="800" height="300" rendered="{!isHideImage}" />
         </apex:pageBlock>
     </div>
     <div id="col2">
-        <apex:form >
+        <apex:form>
             <apex:pageMessages />
             <apex:pageBlock rendered="{!isHideCounter}">
                 <apex:outputText value="Wait 5 sec and watch this counter: {!count}" id="counter" />
@@ -66,7 +66,7 @@
         <apex:pageBlock id="block" rendered="{!isHideJSRemoting}">
             <input id="acctSearch" type="text" placeholder="type the contact name" />
             <button onclick="getRemoteContact()">Get Contact</button>
-            <apex:form >
+            <apex:form>
                 <apex:commandlink action="{!remind}" value="forgot?" />
             </apex:form>
             <div rendered="{!isHideContactId}">
@@ -82,15 +82,15 @@
                 </apex:pageBlockSectionItem>
             </apex:pageBlockSection>
         </apex:pageBlock>
-        <apex:pageBlock >
-            <apex:form >
+        <apex:pageBlock>
+            <apex:form>
                 <ul class="slds-list_dotted slds-text-heading_medium">
                     <li class="slds-item">apex:page action;
                     </li>
                     <li class="slds-item">
                         <apex:commandlink action="{!commandlink}" value="apex:commandLink" />
                     </li>
-                    <li class="slds-item">
+                    <li class="slds-item ">
                         <apex:commandButton action="{!actionFunction}" value="apex:actionFunction" />
                     </li>
                     <li class="slds-item">

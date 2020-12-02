@@ -2,15 +2,18 @@ public with sharing class FirstExtension {
   public Boolean isHideForm { get; set; }
   public String contactId { get; set; }
   private String message { get; set; }
+  public Contact contact { get; set; }
 
   ApexPages.StandardController controller;
 
   public FirstExtension(ApexPages.StandardController con) {
     isHideForm = false;
     controller = con;
+    contact = (Contact) controller.getRecord();
   }
 
   public PageReference save() {
+    contact.Title = 'Visualforce presentation';
     controller.save();
     contactId = controller.getId();
 

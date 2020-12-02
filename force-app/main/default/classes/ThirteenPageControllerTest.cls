@@ -14,7 +14,7 @@ private class ThirteenPageControllerTest {
 
   @isTest
   static void testGetLimits() {
-    Integer actual = 9;
+    Integer actual = 11;
     Integer expected = 0;
     ThirteenPageController controller = new ThirteenPageController();
 
@@ -28,7 +28,7 @@ private class ThirteenPageControllerTest {
   @isTest
   static void testGetLimitsSecondPart() {
     Integer actual = 18;
-    Integer expected = 9;
+    Integer expected = 11;
     ThirteenPageController controller = new ThirteenPageController();
 
     for (Limit__c l : controller.getLimitsSecondPart()) {

@@ -6,7 +6,7 @@
         <apex:slds />
     </head>
     <c:header isHideBackButton="true" isHideNextButton="true" myValue="{!$CurrentPage.Name}" contactId="" />
-    <apex:pageBlock >
+    <apex:pageBlock>
         <apex:pageBlockSection columns="2">
             <apex:image url="{!$Resource.createPage}" width="800" height="300" />
             <ul class="slds-list_dotted slds-text-heading_large">

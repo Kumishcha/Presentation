@@ -1,44 +1,47 @@
 <apex:page lightningStyleSheets="true">
-    <style>
-        #col1,
-        #col2 {
-            width: 49%;
-            display: inline-block;
-        }
-    </style>
 
     <head>
+        <style>
+            #col1,
+            #col2 {
+                width: 49%;
+                display: inline-block;
+            }
+        </style>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <apex:slds />
     </head>
     <c:header isHideBackButton="true" isHideNextButton="true" myValue="{!$CurrentPage.Name}" contactId="" />
     <div id="col1">
-        <apex:pageBlock >
-            <apex:image url="{!$Resource.orderOfExecution}" width="600" />
+        <apex:pageBlock>
+            <apex:image url="{!$Resource.orderOfExecution}" width="577" />
         </apex:pageBlock>
     </div>
     <div id="col2">
-        <apex:pageBlock >
-            <ul class="slds-list_dotted slds-text-heading_large">
-                <apex:image url="{!$Resource.extentions}" width="600" height="250" />
-                <li class="slds-item">a controller extension is any Apex class;
-                </li>
-                <li class="slds-item">the extension is associated with the controller using constructor;
-                </li>
-                <li class="slds-item">the extension constructor initializes the private member variable by using the getRecord method from the
-                    standard controller; overrides are defined by the extension that is first in the comma-separated list;
-                </li>
-                <li class="slds-item">controller extensions run in system mode;
-                </li>
-                <li class="slds-item">if a controller extension extends a standard controller, it’ll execute in user mode.
-                </li>
-                <apex:image url="{!$Resource.component}" width="600" height="250" />
-                <li class="slds-item">custom components encapsulate a piece of code;
-                </li>
-                <li class="slds-item">custom components allow developers to define attributes that can be passed in to each component.
-                </li>
-            </ul>
+        <apex:pageBlock>
+            <div class="slds-text-longform">
+                <ul class="slds-list_dotted slds-text-heading_large">
+                    <apex:image url="{!$Resource.extentions}" />
+                    <li class="slds-item">a controller extension is any Apex class;
+                    </li>
+                    <li class="slds-item">the extension is associated with the controller using constructor;
+                    </li>
+                    <li class="slds-item">the extension constructor initializes the private member variable by using the getRecord method from
+                        the standard controller; overrides are defined by the extension that is first in the comma-separated
+                        list;
+                    </li>
+                    <li class="slds-item">controller extensions run in system mode;
+                    </li>
+                    <li class="slds-item">if a controller extension extends a standard controller, it’ll execute in user mode.
+                    </li>
+                    <apex:image url="{!$Resource.component}" />
+                    <li class="slds-item">custom components encapsulate a piece of code;
+                    </li>
+                    <li class="slds-item">custom components allow developers to define attributes that can be passed in to each component.
+                    </li>
+                </ul>
+            </div>
         </apex:pageBlock>
     </div>
 </apex:page>

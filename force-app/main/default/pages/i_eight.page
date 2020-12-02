@@ -1,17 +1,18 @@
 <apex:page lightningStyleSheets="true" controller="ControllerForSendingContactId">
 
     <head>
+        <style>
+            #col1,
+            #col2 {
+                width: 49%;
+                display: inline-block;
+            }
+        </style>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <apex:slds />
     </head>
-    <style>
-        #col1,
-        #col2 {
-            width: 49%;
-            display: inline-block;
-        }
-    </style>
+
     <apex:includeLightning />
     <c:header isHideBackButton="true" isHideNextButton="true" myValue="{!$CurrentPage.Name}" contactId="{!contactId}" />
     <div id="col1">
@@ -36,6 +37,7 @@
                     </li>
                     <li class="slds-item">Write a function that creates the component on the Visualforce page with $Lightning.createComponent().
                     </li>
+                    <br/>
                 </ol>
             </apex:pageBlockSection>
             <div id="c1" />

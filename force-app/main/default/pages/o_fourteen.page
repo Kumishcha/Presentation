@@ -8,43 +8,47 @@
     <apex:includeLightning />
     <c:header isHideBackButton="true" isHideNextButton="false" myValue="{!$CurrentPage.Name}" contactId="{!contactId}" />
     <apex:pageBlock>
-        <ui class="slds-list_dotted slds-text-heading_medium">
-            <li class="slds-item">
-                <apex:outputlink value="https://trailhead.salesforce.com/content/learn/modules/visualforce_fundamentals">https://trailhead.salesforce.com/content/learn/modules/visualforce_fundamentals</apex:outputlink>
-            </li>
-            <li class="slds-item">
-                <apex:outputlink value="https://trailhead.salesforce.com/en/content/learn/projects/quickstart-visualforce">https://trailhead.salesforce.com/en/content/learn/projects/quickstart-visualforce</apex:outputlink>
-            </li>
-            <li class="slds-item">
-                <apex:outputlink value="https://trailhead.salesforce.com/en/content/learn/modules/lex_dev_visualforce">https://trailhead.salesforce.com/en/content/learn/modules/lex_dev_visualforce</apex:outputlink>
-            </li>
-            <li class="slds-item">
-                <apex:outputlink value="https://trailhead.salesforce.com/en/content/learn/projects/workshop-lightning-design-system-visualforce">https://trailhead.salesforce.com/en/content/learn/projects/workshop-lightning-design-system-visualforce</apex:outputlink>
-            </li>
-            <li class="slds-item">
-                <apex:outputlink value="https://trailhead.salesforce.com/en/content/learn/modules/lwc-for-visualforce-developers">https://trailhead.salesforce.com/en/content/learn/modules/lwc-for-visualforce-developers</apex:outputlink>
-            </li>
-            <li class="slds-item">
-                <apex:outputlink value="https://trailhead.salesforce.com/en/content/learn/projects/quick-start-explore-the-visualforce-to-lwc-sample-app">https://trailhead.salesforce.com/en/content/learn/projects/quick-start-explore-the-visualforce-to-lwc-sample-app</apex:outputlink>
-            </li>
-            <li class="slds-item">
-                <apex:outputlink value="https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_intro.htm">https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_intro.htm</apex:outputlink>
-            </li>
-            <li class="slds-item">
-                <apex:outputlink value="https://developer.salesforce.com/docs/atlas.en-us.salesforce_visualforce_best_practices.meta/salesforce_visualforce_best_practices/vfbp_intro.htm">https://developer.salesforce.com/docs/atlas.en-us.salesforce_visualforce_best_practices.meta/salesforce_visualforce_best_practices/vfbp_intro.htm</apex:outputlink>
-            </li>
-            <li class="slds-item">
-                <apex:outputlink value="http://sfdcsrini.blogspot.com/2014/06/visualforce-form-tags-with-examples.html">http://sfdcsrini.blogspot.com/2014/06/visualforce-form-tags-with-examples.html</apex:outputlink>
-            </li>
-            <li class="slds-item">
-                <apex:outputlink value="https://help.salesforce.com/articleView?id=code_dev_console_tab_view_state.htm&amp;type=5">https://help.salesforce.com/articleView?id=code_dev_console_tab_view_state.htm&amp;type=5</apex:outputlink>
-            </li>
-            <li class="slds-item">
-                <apex:outputlink value="https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_tools_edit_toolbar.htm">https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_tools_edit_toolbar.htm</apex:outputlink>
-            </li>
-            <li class="slds-item">
-                <apex:outputlink value=" https://help.salesforce.com/articleView?id=import_with_data_import_wizard.htm&amp;type=5"> https://help.salesforce.com/articleView?id=import_with_data_import_wizard.htm&amp;type=5</apex:outputlink>
-            </li>
-        </ui>
+        <div class="slds-text-longform">
+            <br/>
+            <ui class="slds-list_dotted slds-text-heading_medium">
+                <li class="slds-item">
+                    <apex:outputlink value="https://trailhead.salesforce.com/content/learn/modules/visualforce_fundamentals">https://trailhead.salesforce.com/content/learn/modules/visualforce_fundamentals</apex:outputlink>
+                </li>
+                <li class="slds-item">
+                    <apex:outputlink value="https://trailhead.salesforce.com/en/content/learn/projects/quickstart-visualforce">https://trailhead.salesforce.com/en/content/learn/projects/quickstart-visualforce</apex:outputlink>
+                </li>
+                <li class="slds-item">
+                    <apex:outputlink value="https://trailhead.salesforce.com/en/content/learn/modules/lex_dev_visualforce">https://trailhead.salesforce.com/en/content/learn/modules/lex_dev_visualforce</apex:outputlink>
+                </li>
+                <li class="slds-item">
+                    <apex:outputlink value="https://trailhead.salesforce.com/en/content/learn/projects/workshop-lightning-design-system-visualforce">https://trailhead.salesforce.com/en/content/learn/projects/workshop-lightning-design-system-visualforce</apex:outputlink>
+                </li>
+                <li class="slds-item">
+                    <apex:outputlink value="https://trailhead.salesforce.com/en/content/learn/modules/lwc-for-visualforce-developers">https://trailhead.salesforce.com/en/content/learn/modules/lwc-for-visualforce-developers</apex:outputlink>
+                </li>
+                <li class="slds-item">
+                    <apex:outputlink value="https://trailhead.salesforce.com/en/content/learn/projects/quick-start-explore-the-visualforce-to-lwc-sample-app">https://trailhead.salesforce.com/en/content/learn/projects/quick-start-explore-the-visualforce-to-lwc-sample-app</apex:outputlink>
+                </li>
+                <li class="slds-item">
+                    <apex:outputlink value="https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_intro.htm">https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_intro.htm</apex:outputlink>
+                </li>
+                <li class="slds-item">
+                    <apex:outputlink value="https://developer.salesforce.com/docs/atlas.en-us.salesforce_visualforce_best_practices.meta/salesforce_visualforce_best_practices/vfbp_intro.htm">https://developer.salesforce.com/docs/atlas.en-us.salesforce_visualforce_best_practices.meta/salesforce_visualforce_best_practices/vfbp_intro.htm</apex:outputlink>
+                </li>
+                <li class="slds-item">
+                    <apex:outputlink value="http://sfdcsrini.blogspot.com/2014/06/visualforce-form-tags-with-examples.html">http://sfdcsrini.blogspot.com/2014/06/visualforce-form-tags-with-examples.html</apex:outputlink>
+                </li>
+                <li class="slds-item">
+                    <apex:outputlink value="https://help.salesforce.com/articleView?id=code_dev_console_tab_view_state.htm&amp;type=5">https://help.salesforce.com/articleView?id=code_dev_console_tab_view_state.htm&amp;type=5</apex:outputlink>
+                </li>
+                <li class="slds-item">
+                    <apex:outputlink value="https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_tools_edit_toolbar.htm">https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_tools_edit_toolbar.htm</apex:outputlink>
+                </li>
+                <li class="slds-item">
+                    <apex:outputlink value=" https://help.salesforce.com/articleView?id=import_with_data_import_wizard.htm&amp;type=5"> https://help.salesforce.com/articleView?id=import_with_data_import_wizard.htm&amp;type=5</apex:outputlink>
+                </li>
+            </ui>
+            <br/>
+        </div>
     </apex:pageBlock>
 </apex:page>

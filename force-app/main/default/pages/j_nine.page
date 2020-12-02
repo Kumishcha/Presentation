@@ -7,7 +7,7 @@
     </head>
     <apex:includeLightning />
     <c:header isHideBackButton="true" isHideNextButton="true" myValue="{!$CurrentPage.Name}" contactId="{!contactId}" />
-    <apex:pageBlock >
+    <apex:pageBlock>
         <apex:pageBlockSection columns="2">
             <apex:image url="{!$Resource.css}" width="800" height="300" />
             <ui class="slds-list_dotted slds-text-heading_large">
@@ -16,6 +16,14 @@
                 <li class="slds-item">Inline Styles: defined within the HTML markup of the particular page element;
                 </li>
                 <li class="slds-item">External Styles: defined in the external Style Sheet which is linked to the web pages;
+                    <ul class="slds-is-nested slds-list_ordered">
+                        <li>create custom CSS file;
+                        </li>
+                        <li>upload custom CSS file in the static resource;
+                        </li>
+                        <li>add static resource URL in apex page
+                        </li>
+                    </ul>
                 </li>
                 <li class="slds-item">Using the Lightning Design System.
                 </li>

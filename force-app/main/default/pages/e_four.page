@@ -1,45 +1,50 @@
 <apex:page lightningStyleSheets="true">
-    <style>
-        #col1,
-        #col2 {
-            width: 49%;
-            display: inline-block;
-        }
-    </style>
 
     <head>
+        <style>
+            #col1,
+            #col2 {
+                width: 49%;
+                display: inline-block;
+            }
+        </style>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <apex:slds />
     </head>
     <c:header isHideBackButton="true" isHideNextButton="true" myValue="{!$CurrentPage.Name}" contactId="" />
-    <div id="col1" class="slds-text-heading_medium">
+    <div id="col1" class="slds-text-heading_large">
         <apex:pageBlock title="Standard controller">
-            <apex:image url="{!$Resource.StandardController}" width="800" height="300" />
-            <ul class="slds-list_dotted slds-text-heading_large">
-                <li class="slds-item">standard methods
-                </li>
-                <li class="slds-item">page can be embedded within an object’s page layouts
-                </li>
-                <li class="slds-item">supports standard list controllers
-                </li>
-                <li class="slds-item">use controller extensions
-                </li>
-            </ul>
+            <apex:image url="{!$Resource.StandardController}" />
+            <div class="slds-text-longform">
+                <ul class="slds-list_dotted ">
+                    <li class="slds-item">standard methods
+                    </li>
+                    <li class="slds-item">page can be embedded within an object’s page layouts
+                    </li>
+                    <br/>
+                    <li class="slds-item">supports standard list controllers
+                    </li>
+                    <li class="slds-item">use controller extensions
+                    </li>
+                </ul>
+            </div>
         </apex:pageBlock>
     </div>
-    <div id="col2" class="slds-text-heading_medium">
+    <div id="col2" class="slds-text-heading_large">
         <apex:pageBlock title="Custom controller">
             <apex:image url="{!$Resource.CustomController}" width="800" height="300" />
-            <ul class="slds-list_dotted slds-text-heading_large">
-                <li class="slds-item">custom methods
-                </li>
-                <li class="slds-item">page can’t be embedded within an object’s page layouts
-                </li>
-                <li class="slds-item"> -
-                </li>
-                <li class="slds-item">use controller extensions</li>
-            </ul>
+            <div class="slds-text-longform">
+                <ul class="slds-list_dotted slds-text-heading_large">
+                    <li class="slds-item">custom methods
+                    </li>
+                    <li class="slds-item">page can’t be embedded within an object’s page layouts
+                    </li>
+                    <li class="slds-item"> -
+                    </li>
+                    <li class="slds-item">use controller extensions</li>
+                </ul>
+            </div>
         </apex:pageBlock>
     </div>
 </apex:page>
