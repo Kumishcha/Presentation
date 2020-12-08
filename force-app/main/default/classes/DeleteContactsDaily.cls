@@ -1,4 +1,7 @@
-global class DeleteContactsDaily implements Schedulable {
+global without sharing class DeleteContactsDaily implements Schedulable {
+  global DeleteContactsDaily() {
+  }
+
   global void execute(SchedulableContext ctx) {
     List<Contact> contacts = [
       SELECT Id, Name

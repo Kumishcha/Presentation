@@ -10,6 +10,7 @@ private class SevenPageControllerTest {
   static void testGetContactId() {
     Id actual;
     Id expected;
+    String namespacePrefix = 'kvk__';
 
     List<PagesName> values = PagesName.values();
     List<Contact> cont = [SELECT Id, Name FROM Contact LIMIT 1];
@@ -18,7 +19,7 @@ private class SevenPageControllerTest {
 
     ComponentController controller = new ComponentController();
     controller.conId = actual;
-    controller.pageName = values[7].name().toLowerCase();
+    controller.pageName = namespacePrefix + values[7].name().toLowerCase();
 
     System.Test.setCurrentPage(controller.goToNextPage());
 

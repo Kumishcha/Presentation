@@ -2,11 +2,14 @@
 private class ThirteenPageControllerTest {
   @TestSetup
   static void setData() {
-    List<Limit__c> listToInsert = new List<Limit__c>();
+    List<kvk__Limit__c> listToInsert = new List<Limit__c>();
 
     for (Integer i = 0; i < 18; i++) {
       listToInsert.add(
-        new Limit__c(Description__c = 'Item', Value__c = 'value' + i)
+        new kvk__Limit__c(
+          kvk__Description__c = 'Item',
+          kvk__Value__c = 'value' + i
+        )
       );
     }
     insert listToInsert;

@@ -42,12 +42,12 @@
         </div>
         <apex:pageBlockSection columns="2">
             <apex:pageBlockTable value="{!limits}" var="l">
-                <apex:column value="{!l.Description__c}" />
-                <apex:column value="{!l.Value__c}" />
+                <apex:column value="{!l.kvk__Description__c}" />
+                <apex:column value="{!l.kvk__Value__c}" />
             </apex:pageBlockTable>
             <apex:pageBlockTable value="{!limitsSecondPart}" var="l">
-                <apex:column value="{!l.Description__c}" />
-                <apex:column value="{!l.Value__c}" />
+                <apex:column value="{!l.kvk__Description__c}" />
+                <apex:column value="{!l.kvk__Value__c}" />
             </apex:pageBlockTable>
         </apex:pageBlockSection>
     </apex:pageBlock>
@@ -78,7 +78,7 @@
                         <li>Map your data fields to Salesforce data fields and click Next.</li>
                         <li>Click Start Import</li>
                         <li>Check import status</li>
-                        <li>Close the window and refresh the page</li>
+                        <li>Close this the window and refresh the page</li>
                         <li>If you don't see of data, you'll wait and refresh the page</li>
 
                     </ol>

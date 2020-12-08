@@ -17,11 +17,14 @@
                 <li class="slds-item">use the case-insensitive expression syntax
                     <br/>{! $Label.expressionSyntax };
                 </li>
-                <li class="slds-item">use global variable: {! $Label.globalVariable} etc.;
+                <li class="slds-item">use global variable:
+                    <br/>{! $Label.globalVariable} etc.;
                 </li>
-                <li class="slds-item">use formula expression: {! $Label.formulaExpression};
+                <li class="slds-item">use formula expression:
+                    <br/>{! $Label.formulaExpression};
                 </li>
-                <li class="slds-item">use conditional expression: {! $Label.conditionalExpression}.
+                <li class="slds-item">use conditional expression:
+                    <br/>{! $Label.conditionalExpression}.
                 </li>
             </ul>
         </apex:pageBlockSection>

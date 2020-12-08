@@ -12,11 +12,19 @@ public with sharing class ThirteenPageController {
   }
 
   public List<Limit__c> getLimits() {
-    return [SELECT Id, Description__c, Value__c FROM Limit__c LIMIT 11];
+    return [
+      SELECT Id, kvk__Description__c, kvk__Value__c
+      FROM kvk__Limit__c
+      LIMIT 11
+    ];
   }
 
   public List<Limit__c> getLimitsSecondPart() {
-    return [SELECT Id, Description__c, Value__c FROM Limit__c OFFSET 11];
+    return [
+      SELECT Id, kvk__Description__c, kvk__Value__c
+      FROM kvk__Limit__c
+      OFFSET 11
+    ];
   }
 
   public void closePopup() {

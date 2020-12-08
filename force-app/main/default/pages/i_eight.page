@@ -17,9 +17,9 @@
     <c:header isHideBackButton="true" isHideNextButton="true" myValue="{!$CurrentPage.Name}" contactId="{!contactId}" />
     <div id="col1">
         <script>
-            $Lightning.use("c:myLightningApp", function () {
+            $Lightning.use("kvk:myLightningApp", function () {
                 $Lightning.createComponent(
-                    "c:helloMessageInteractive",
+                    "kvk:helloMessageInteractive",
                     {},
                     "c1",
                     function (cmp) {
@@ -35,9 +35,9 @@
                     </li>
                     <li class="slds-item">Reference a Lightning app that declares your component dependencies with $Lightning.use().
                     </li>
-                    <li class="slds-item">Write a function that creates the component on the Visualforce page with $Lightning.createComponent().
+                    <li class="slds-item">Write a function that creates the component on the Visualforce page with
+                        <br/> $Lightning.createComponent().
                     </li>
-                    <br/>
                 </ol>
             </apex:pageBlockSection>
             <div id="c1" />
@@ -45,8 +45,8 @@
     </div>
     <div id="col2">
         <script>
-            $Lightning.use("c:myLightningApp", function () {
-                $Lightning.createComponent("c:componentForVFLWC",
+            $Lightning.use("kvk:myLightningApp", function () {
+                $Lightning.createComponent("kvk:componentForVFLWC",
                     {
                     },
                     "c2",
