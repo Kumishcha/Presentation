@@ -1,7 +1,6 @@
 public with sharing class FirstExtension {
   public Boolean isHideForm { get; set; }
   public String contactId { get; set; }
-  private String message { get; set; }
   public Contact contact { get; set; }
 
   ApexPages.StandardController controller;
@@ -13,13 +12,13 @@ public with sharing class FirstExtension {
   }
 
   public PageReference save() {
-    contact.Title = 'Visualforce presentation';
+    contact.Title = Label.titleForContacts;
     controller.save();
     contactId = controller.getId();
 
     PageReference pageRef = new PageReference(
       System.Url.getSalesforceBaseUrl().toExternalForm() +
-      '/apex/g_six?core.apexpages.request.devconsole=1&id=' +
+      Label.URLForFirstExtension +
       contactId
     );
 
@@ -33,7 +32,6 @@ public with sharing class FirstExtension {
   }
 
   public String getFirstExtensionMessage() {
-    message = 'you use FirstExtension class';
-    return message;
+    return Label.messageForFirstExtension;
   }
 }

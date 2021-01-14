@@ -21,12 +21,17 @@ public with sharing class SevenPageController {
 
   public SevenPageController() {
     isHideImage = false;
-    contactId = ApexPages.currentPage().getParameters().get('contactId');
+    contactId = ApexPages.currentPage().getParameters().get(Label.contactId);
   }
 
   @RemoteAction
   public static Contact getContact(String contactName) {
-    contacts = [SELECT Id, Name FROM Contact WHERE FirstName = :contactName];
+    contacts = [
+      SELECT Id, Name
+      FROM Contact
+      WHERE FirstName = :contactName
+      WITH SECURITY_ENFORCED
+    ];
     contact = contacts[0];
     return contact;
   }
@@ -41,7 +46,7 @@ public with sharing class SevenPageController {
 
   public PageReference commandlink() {
     setToZero();
-    message = 'you use commandlink method';
+    message = Label.messageForCommandlink;
     ApexPages.addMessage(
       new ApexPages.message(ApexPages.severity.CONFIRM, message)
     );
@@ -52,7 +57,7 @@ public with sharing class SevenPageController {
   public PageReference actionPoller() {
     setToZero();
     isHideCounter = true;
-    message = 'you use actionPoller method';
+    message = Label.messageForActionPoller;
     ApexPages.addMessage(
       new ApexPages.message(ApexPages.severity.CONFIRM, message)
     );
@@ -63,7 +68,7 @@ public with sharing class SevenPageController {
   public PageReference actionFunction() {
     setToZero();
     isHideFunction = true;
-    message = 'you use actionFunction method';
+    message = Label.messageForActionFunction;
     ApexPages.addMessage(
       new ApexPages.message(ApexPages.severity.CONFIRM, message)
     );
@@ -74,12 +79,12 @@ public with sharing class SevenPageController {
   public PageReference actionSupport() {
     setToZero();
     isHideSupport = true;
-    supportValue = 'type something';
+    supportValue = Label.messageForHelpActionSupport;
     return null;
   }
 
   public PageReference supportMethod() {
-    message = 'you use actionSupport method';
+    message = Label.messageForActionSupport;
     ApexPages.addMessage(
       new ApexPages.message(ApexPages.severity.CONFIRM, message)
     );
@@ -90,7 +95,7 @@ public with sharing class SevenPageController {
   public PageReference JSRemoting() {
     setToZero();
     isHideJSRemoting = true;
-    message = 'you use Javascript Remoting method';
+    message = Label.messageForJSRemoting;
     ApexPages.addMessage(
       new ApexPages.message(ApexPages.severity.CONFIRM, message)
     );
@@ -100,7 +105,12 @@ public with sharing class SevenPageController {
 
   public void remind() {
     isHideContactId = true;
-    conName = [SELECT Id, FirstName FROM Contact WHERE id = :contactId]
+    conName = [
+      SELECT Id, FirstName
+      FROM Contact
+      WHERE id = :contactId
+      WITH SECURITY_ENFORCED
+    ]
     .FirstName;
     JSRemoting();
   }

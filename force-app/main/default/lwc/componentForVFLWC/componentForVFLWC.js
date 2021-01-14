@@ -7,12 +7,10 @@ import {
 import {
     ShowToastEvent
 } from "lightning/platformShowToastEvent";
-import CONFETTI from "@salesforce/resourceUrl/ConfettiResource";
+import CONFETTI from "@salesforce/resourceUrl/jsResource";
 
 export default class ComponentForVFLWC extends LightningElement {
-    myconfetti;
-
-
+   
     connectedCallback() {
         Promise.all([
                 loadScript(this, CONFETTI)
@@ -111,9 +109,7 @@ export default class ComponentForVFLWC extends LightningElement {
 
     burst() {
         var end = Date.now() + (15 * 75);
-        //These are four diffrent confetti in frour diffrent corner
-        (function frame() {
-            // #1
+               (function frame() {
             confetti({
                 particleCount: 7,
                 startVelocity: 25,
@@ -124,7 +120,6 @@ export default class ComponentForVFLWC extends LightningElement {
                     y: 0,
                 },
             });
-            // #2
             confetti({
                 particleCount: 7,
                 startVelocity: 25,
@@ -135,7 +130,6 @@ export default class ComponentForVFLWC extends LightningElement {
                     y: 0,
                 },
             });
-            // #3
             confetti({
                 particleCount: 7,
                 startVelocity: 35,
@@ -146,7 +140,6 @@ export default class ComponentForVFLWC extends LightningElement {
                     y: 1,
                 },
             });
-            // #4
             confetti({
                 particleCount: 7,
                 startVelocity: 35,

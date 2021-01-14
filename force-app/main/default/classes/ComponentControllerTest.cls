@@ -3,9 +3,13 @@ private class ComponentControllerTest {
   @isTest
   static void testGetMessage() {
     String actual;
-    String namespacePrefix = 'kvk__';
 
-    List<Apexpage> lst = [SELECT id, name FROM Apexpage ORDER BY Name ASC];
+    List<Apexpage> lst = [
+      SELECT id, name
+      FROM Apexpage
+      WITH SECURITY_ENFORCED
+      ORDER BY Name ASC
+    ];
     List<PagesName> values = PagesName.values();
     Map<PagesName, String> mapOfMessages = ComponentMessages.getMap();
 
@@ -22,7 +26,7 @@ private class ComponentControllerTest {
 
           System.Test.setCurrentPageReference(pageRef);
           ComponentController controller = new ComponentController();
-          controller.pageName = namespacePrefix + a.name;
+          controller.pageName = Label.namespacePrefix + a.name;
 
           System.assertEquals(controller.getMessage(), actual);
         }
@@ -32,15 +36,18 @@ private class ComponentControllerTest {
 
   @isTest
   static void testGoToNextPage() {
-    String namespacePrefix = 'kvk__';
     String actualName;
     PageReference pageRefActual;
 
-    List<Apexpage> lst = [SELECT id, name FROM Apexpage ORDER BY Name ASC];
+    List<Apexpage> lst = [
+      SELECT id, name
+      FROM Apexpage
+      WITH SECURITY_ENFORCED
+      ORDER BY Name ASC
+    ];
     List<PagesName> values = PagesName.values();
 
     for (Apexpage a : lst) {
-      System.debug(a.name);
       for (Integer i = 0; i < values.size() - 1; i++) {
         if (a.name == values[i].name().toLowercase()) {
           PageReference pageRef = new PageReference(
@@ -49,13 +56,18 @@ private class ComponentControllerTest {
             a.name
           );
 
-          actualName = values[i + 1].name().toLowercase();
+          actualName =
+            Label.namespacePrefix + values[i + 1].name().toLowercase();
 
-          pageRefActual = new PageReference('/apex/' + actualName);
+          pageRefActual = new PageReference(
+            System.Url.getSalesforceBaseUrl().toExternalForm() +
+            '/apex/' +
+            actualName
+          );
 
           System.Test.setCurrentPageReference(pageRef);
           ComponentController controller = new ComponentController();
-          controller.pageName = namespacePrefix + a.name;
+          controller.pageName = Label.namespacePrefix + a.name;
 
           System.assertEquals(
             controller.goToNextPage().getUrl(),
@@ -68,11 +80,15 @@ private class ComponentControllerTest {
 
   @isTest
   static void testGoToBackPage() {
-    String namespacePrefix = 'kvk__';
     String actualName;
     PageReference pageRefActual;
 
-    List<Apexpage> lst = [SELECT id, name FROM Apexpage ORDER BY Name DESC];
+    List<Apexpage> lst = [
+      SELECT id, name
+      FROM Apexpage
+      WITH SECURITY_ENFORCED
+      ORDER BY Name DESC
+    ];
     List<PagesName> values = PagesName.values();
     for (Apexpage a : lst) {
       for (Integer i = values.size() - 1; i > 0; i--) {
@@ -83,13 +99,18 @@ private class ComponentControllerTest {
             a.name
           );
 
-          actualName = values[i - 1].name().toLowercase();
+          actualName =
+            Label.namespacePrefix + values[i - 1].name().toLowercase();
 
-          pageRefActual = new PageReference('/apex/' + actualName);
+          pageRefActual = new PageReference(
+            System.Url.getSalesforceBaseUrl().toExternalForm() +
+            '/apex/' +
+            actualName
+          );
 
           System.Test.setCurrentPageReference(pageRef);
           ComponentController controller = new ComponentController();
-          controller.pageName = namespacePrefix + a.name;
+          controller.pageName = Label.namespacePrefix + a.name;
 
           System.assertEquals(
             controller.goToBackPage().getUrl(),

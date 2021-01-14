@@ -43,5 +43,13 @@
   "main": "index.js",
   "dependencies": {},
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kumishcha/Presentation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kumishcha/Presentation/issues"
+  },
+  "homepage": "https://github.com/Kumishcha/Presentation#readme"
 }

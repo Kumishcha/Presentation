@@ -31,7 +31,7 @@
         <apex:pageBlock title="Aura">
             <apex:pageBlockSection columns="1">
                 <ol class="slds-list_ordered slds-text-heading_large">
-                    <li class="slds-item">Add the {! $Label.includeLightning}  component to your Visualforce page.
+                    <li class="slds-item">Add the {! $Label.includeLightning} component to your Visualforce page.
                     </li>
                     <li class="slds-item">Reference a Lightning app that declares your component dependencies with $Lightning.use().
                     </li>

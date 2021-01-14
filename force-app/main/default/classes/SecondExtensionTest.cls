@@ -2,16 +2,22 @@
 private class SecondExtensionTest {
   @TestSetup
   static void setData() {
-    Contact contact = new Contact(FirstName = 'M', LastName = 'K');
-    insert contact;
+    Savepoint sp = Database.setSavepoint();
+    try {
+      Contact contact = new Contact(FirstName = 'M', LastName = 'K');
+      insert contact;
+    } catch (Exception e) {
+      Database.rollback(sp);
+      System.debug(e.getMessage());
+    }
   }
 
   @isTest
   static void testSecondExtensionSave() {
-    String actual = 'you use save method of SecondExtension class';
+    String actual = Label.messageForSaveMethod;
     String expected;
 
-    List<Contact> cont = [SELECT Id, Name FROM Contact LIMIT 1];
+    List<Contact> cont = [SELECT Id, Name FROM Contact WITH SECURITY_ENFORCED];
 
     Apexpages.StandardController sc = new Apexpages.StandardController(cont[0]);
     SecondExtension ext = new SecondExtension(sc);
@@ -24,16 +30,15 @@ private class SecondExtensionTest {
 
   @isTest
   static void testGetSecondExtensionMessage() {
-    String actual = 'you use SecondExtension class';
+    String actual = Label.messageForSecondExtension;
     String expected;
 
-    List<Contact> cont = [SELECT Id, Name FROM Contact LIMIT 1];
+    List<Contact> cont = [SELECT Id, Name FROM Contact WITH SECURITY_ENFORCED];
 
     Apexpages.StandardController sc = new Apexpages.StandardController(cont[0]);
     SecondExtension ext = new SecondExtension(sc);
-    ext.getSecondExtensionMessage();
 
-    expected = ext.message;
+    expected = ext.getSecondExtensionMessage();
 
     System.assertEquals(expected, actual);
   }

@@ -7,7 +7,7 @@ public with sharing class SecondExtension {
   }
 
   public PageReference save() {
-    message = 'you use save method of SecondExtension class';
+    message = Label.messageForSaveMethod;
     ApexPages.addMessage(
       new ApexPages.message(ApexPages.severity.WARNING, message)
     );
@@ -15,7 +15,6 @@ public with sharing class SecondExtension {
   }
 
   public String getSecondExtensionMessage() {
-    message = 'you use SecondExtension class';
-    return message;
+    return Label.messageForSecondExtension;
   }
 }

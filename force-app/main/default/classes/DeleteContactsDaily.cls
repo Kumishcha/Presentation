@@ -3,12 +3,19 @@ global without sharing class DeleteContactsDaily implements Schedulable {
   }
 
   global void execute(SchedulableContext ctx) {
-    List<Contact> contacts = [
-      SELECT Id, Name
-      FROM Contact
-      WHERE Title = 'Visualforce presentation'
-    ];
+    Savepoint sp = Database.setSavepoint();
+    try {
+      List<Contact> contacts = [
+        SELECT Id, Name
+        FROM Contact
+        WHERE Title = :Label.titleForContacts
+        WITH SECURITY_ENFORCED
+      ];
 
-    delete contacts;
+      delete contacts;
+    } catch (Exception e) {
+      Database.rollback(sp);
+      System.debug(e.getMessage());
+    }
   }
 }

@@ -2,24 +2,30 @@
 private class SevenPageControllerTest {
   @TestSetup
   static void setData() {
-    Contact contact = new Contact(FirstName = 'M', LastName = 'K');
-    insert contact;
+    Savepoint sp = Database.setSavepoint();
+    try {
+      Contact contact = new Contact(FirstName = 'M', LastName = 'K');
+      insert contact;
+    } catch (Exception e) {
+      Database.rollback(sp);
+      System.debug(e.getMessage());
+    }
   }
 
   @isTest
   static void testGetContactId() {
     Id actual;
     Id expected;
-    String namespacePrefix = 'kvk__';
 
     List<PagesName> values = PagesName.values();
-    List<Contact> cont = [SELECT Id, Name FROM Contact LIMIT 1];
+    List<Contact> cont = [SELECT Id, Name FROM Contact WITH SECURITY_ENFORCED];
 
     actual = cont[0].Id;
 
     ComponentController controller = new ComponentController();
     controller.conId = actual;
-    controller.pageName = namespacePrefix + values[7].name().toLowerCase();
+    controller.pageName =
+      Label.namespacePrefix + values[7].name().toLowerCase();
 
     System.Test.setCurrentPage(controller.goToNextPage());
 
@@ -35,7 +41,11 @@ private class SevenPageControllerTest {
     Id expected;
     String firstName;
 
-    List<Contact> cont = [SELECT Id, FirstName FROM Contact LIMIT 1];
+    List<Contact> cont = [
+      SELECT Id, FirstName
+      FROM Contact
+      WITH SECURITY_ENFORCED
+    ];
     actual = cont[0].Id;
     firstName = cont[0].FirstName;
 
@@ -68,7 +78,7 @@ private class SevenPageControllerTest {
     PageReference ref;
 
     actual = true;
-    actualMessage = 'you use commandlink method';
+    actualMessage = Label.messageForCommandlink;
 
     SevenPageController contr = new SevenPageController();
     ref = contr.commandlink();
@@ -88,7 +98,7 @@ private class SevenPageControllerTest {
     PageReference ref;
 
     actual = true;
-    actualMessage = 'you use actionPoller method';
+    actualMessage = Label.messageForActionPoller;
 
     SevenPageController contr = new SevenPageController();
     ref = contr.actionPoller();
@@ -108,7 +118,7 @@ private class SevenPageControllerTest {
     PageReference ref;
 
     actual = true;
-    actualMessage = 'you use actionFunction method';
+    actualMessage = Label.messageForActionFunction;
 
     SevenPageController contr = new SevenPageController();
     ref = contr.actionFunction();
@@ -128,7 +138,7 @@ private class SevenPageControllerTest {
     PageReference ref;
 
     actual = true;
-    actualMessage = 'you use actionSupport method';
+    actualMessage = Label.messageForActionSupport;
 
     SevenPageController contr = new SevenPageController();
     ref = contr.actionSupport();
@@ -149,10 +159,11 @@ private class SevenPageControllerTest {
     PageReference ref;
 
     actual = true;
-    actualMessage = 'you use Javascript Remoting method';
+    actualMessage = Label.messageForJSRemoting;
 
     SevenPageController contr = new SevenPageController();
-    contr.contactId = [SELECT Id, Name FROM Contact LIMIT 1][0].Id;
+    contr.contactId = [SELECT Id, Name FROM Contact WITH SECURITY_ENFORCED][0]
+    .Id;
     ref = contr.JSRemoting();
     contr.remind();
     expected = contr.checkE;

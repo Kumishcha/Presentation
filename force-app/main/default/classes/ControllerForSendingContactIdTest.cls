@@ -10,16 +10,16 @@ private class ControllerForSendingContactIdTest {
   static void testGetContactId() {
     Id actual;
     Id expected;
-    String namespacePrefix = 'kvk__';
 
     List<PagesName> values = PagesName.values();
-    List<Contact> cont = [SELECT Id, Name FROM Contact LIMIT 1];
+    List<Contact> cont = [SELECT Id, Name FROM Contact WITH SECURITY_ENFORCED];
 
     actual = cont[0].Id;
 
     ComponentController controller = new ComponentController();
     controller.conId = actual;
-    controller.pageName = namespacePrefix + values[9].name().toLowerCase();
+    controller.pageName =
+      Label.namespacePrefix + values[9].name().toLowerCase();
 
     System.Test.setCurrentPage(controller.goToNextPage());
 

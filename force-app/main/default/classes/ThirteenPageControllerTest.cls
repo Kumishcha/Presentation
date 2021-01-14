@@ -2,17 +2,22 @@
 private class ThirteenPageControllerTest {
   @TestSetup
   static void setData() {
-    List<kvk__Limit__c> listToInsert = new List<Limit__c>();
-
-    for (Integer i = 0; i < 18; i++) {
-      listToInsert.add(
-        new kvk__Limit__c(
-          kvk__Description__c = 'Item',
-          kvk__Value__c = 'value' + i
-        )
-      );
+    List<kvk__Limit__c> listToInsert = new List<kvk__Limit__c>();
+    Savepoint sp = Database.setSavepoint();
+    try {
+      for (Integer i = 0; i < 18; i++) {
+        listToInsert.add(
+          new kvk__Limit__c(
+            kvk__Description__c = 'Item',
+            kvk__Value__c = 'value' + i
+          )
+        );
+      }
+      insert listToInsert;
+    } catch (Exception e) {
+      Database.rollback(sp);
+      System.debug(e.getMessage());
     }
-    insert listToInsert;
   }
 
   @isTest
@@ -21,7 +26,7 @@ private class ThirteenPageControllerTest {
     Integer expected = 0;
     ThirteenPageController controller = new ThirteenPageController();
 
-    for (Limit__c l : controller.getLimits()) {
+    for (kvk__Limit__c l : controller.getLimits()) {
       expected++;
     }
 
@@ -34,7 +39,7 @@ private class ThirteenPageControllerTest {
     Integer expected = 11;
     ThirteenPageController controller = new ThirteenPageController();
 
-    for (Limit__c l : controller.getLimitsSecondPart()) {
+    for (kvk__Limit__c l : controller.getLimitsSecondPart()) {
       expected++;
     }
 
